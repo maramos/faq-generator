@@ -64,8 +64,8 @@ stemmer = nltk.stem.RSLPStemmer()
 stopwords = nltk.corpus.stopwords.words('portuguese')
 
 #vec = sklearn.feature_extraction.text.CountVectorizer(min_df=1)
-#vec = sklearn.feature_extraction.text.TfidfVectorizer(min_df=1)
-vec = TfidfVectorizer(min_df=1)
+vec = sklearn.feature_extraction.text.TfidfVectorizer(min_df=1)
+#vec = TfidfVectorizer(min_df=1)
 
 X_train = vec.fit_transform(get_quest(FAQ))
 n_samples, n_features = X_train.shape
@@ -82,4 +82,4 @@ def nt(text):
 #new_text_vec = vec.transform([new_text])
 #nearest_question = nearest_one(FAQ.keys(),new_text)
 #FAQ.items()[nearest_question][1]
-######
+
